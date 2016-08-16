@@ -15,38 +15,16 @@ describe("Express Server API", function () {
         .expect(200, done);
     });
 
-    // it("returns a correct json format", function (done) {
-    //   supertest(app)
-    //     .get('/users')
-    //     .expect([
-    //                   {
-    //                     name: 'Ren Cheng',
-    //                     hobby: 'Ping Pong!',
-    //                     img: ''
-    //                   },
-    //                   {
-    //                     name: 'Dylan',
-    //                     hobby: 'Pokemon GO!',
-    //                     img: ''
-    //                   },
-    //                   {
-    //                     name: 'Chris Ong',
-    //                     hobby: 'Basketball!',
-    //                     img: ''
-    //                   },
-    //                   {
-    //                     name: 'Sebastian',
-    //                     hobby: 'Archery!',
-    //                     img: ''
-    //                   },
-    //                   {
-    //                     name: 'Edison',
-    //                     hobby: 'KDrama!',
-    //                     img: ''
-    //                   }
-    //
-    //                 ], done);
-    // });
+    it("returns a correct json format", function (done) {
+      supertest(app)
+        .get('/users')
+        .expect({
+          name: "Chua Ren Cheng",
+          gitrepo: "https://github.com/RenchChua",
+          email: "rench00@gmail.com",
+          favquote: "Why have I sought my path with fervent care, if not in hopes to bring my brothers there?"
+        }, done);
+    });
 
     it('returns status 404 when name is not found', function(done) {
      console.log("in 404 test");
