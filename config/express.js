@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     expressLayouts = require('express-ejs-layouts'),
-    cors = require('cors');
+    // cors = require('cors');
 
 module.exports = function() {
   var app = express();
@@ -15,6 +15,14 @@ module.exports = function() {
   }else if (process.env.NODE_ENV === 'production') {
     app.use(compress());
   }
+
+  // allow cors
+
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
   app.use(bodyParser.urlencoded({
     extended: true
@@ -27,25 +35,15 @@ module.exports = function() {
   app.set('view engine', 'ejs');
   app.use(expressLayouts);
 
+
+
   require('../app/routes/index.routes.js')(app);
 
   app.use(express.static('./public'));
 
-  // allow cors
 
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
 
-  app.get('/users', function(req, res, next) {
-    // Handle the get for this route
-  });
 
-  app.post('/', function(req, res, next) {
-    // Handle the post for this route
-  });
   return app;
 
 };
