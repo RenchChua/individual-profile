@@ -46,7 +46,7 @@ describe("Express Server API", function () {
     //                   }
     //
     //                 ], done);
-    });
+    // });
 
     it('returns status 404 when name is not found', function(done) {
      console.log("in 404 test");
