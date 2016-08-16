@@ -1,12 +1,11 @@
 language: node_js
 node_js:
 - node
+deploy:
+  api_key:
+    secure: WdMjCB8UF3rRM7PQdBnFSxswZTH+ZK/ngqwVb0564qoW2HlhFTxgOhqFYpHGtU3zB9d0BNGLaAdUxjVd3x6O8RDy5Gx6SBqs2V1h6vgP0NEi9zFHJm72t3ntZh9X9qC1fURijPpUC0ik3ESo6aevx2+oZlW7RgVjEy/AFQuS6D19as0F3gr3CWLyVsVJerPv0kKfsvGGMtt/zSMg/bFGkhNWu3qXP+jYRu4GGGc1iBFlNKKspiI4kFSn0Rae/aaLudncQ8XLkI9NokiBXGkWcL9UtkccwiNJ+iKEBkS9+LJhsSdlL/+d0TUZ37wetF59f+zoxv+nrVqFZqpZSJRsZSnzSgCsEffj9tzOBMFTQrhaxdwK9zKvPUIugNc86Z8hakLuC/BpLZ6CevaoO2HLtM3EKb4XoTUd7RBMrLDNL97RGGMHfsWZpAhJy7r/ScQrjOEMF3MzAKFq8mu0/xvt4Vhgg/9idvxdx05uhC2Q79C7NCgnqItl+UwNpfxCTROSEGlt+afjvxUPJcGYptysdxt+x1Dubw6JAGC14ncAL84LPaRZsaUuJoQUuqghbpM9BHoTDU8cmObk8c/wv1KlYVYyC30eqI5l1SOLjr78jHSHEPHv9S9aRjuvk8cQlKNzg9BBFYnzVvtSkgxtsjzw3rbO5vUz5Vl2Xat85IEQDDI=
 
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure:
-#   app: glacial-lowlands-36939
-#
-#   on:
-#     repo: RenchChua/individual-profile
+    app: glacial-lowlands-36939
+    on:
+      repo: RenchChua/individual-profile
+      branch: master
