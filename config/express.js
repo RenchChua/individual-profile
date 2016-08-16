@@ -39,7 +39,7 @@ module.exports = function() {
     next();
   });
 
-  app.get('/', function(req, res, next) {
+  app.get('/users', function(req, res, next) {
     // Handle the get for this route
   });
 
