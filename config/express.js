@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     expressLayouts = require('express-ejs-layouts'),
-    // cors = require('cors');
+    cors = require('cors');
 
 module.exports = function() {
   var app = express();
@@ -34,8 +34,6 @@ module.exports = function() {
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
   app.use(expressLayouts);
-
-
 
   require('../app/routes/index.routes.js')(app);
 
